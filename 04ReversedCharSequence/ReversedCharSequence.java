@@ -3,7 +3,7 @@ public class ReversedCharSequence implements CharSequence{
     public ReversedCharSequence(String charSeq){
 	data = "";
 	for(int i = charSeq.length() - 1; i >= 0; i--){
-	    data += charAt(i);
+	    data += charSeq.charAt(i);
 	}
     }
     public char charAt(int index){
@@ -16,4 +16,7 @@ public class ReversedCharSequence implements CharSequence{
 	ReversedCharSequence ret = new ReversedCharSequence(data.substring(start, end));
 	return ret;
     }  
+    public String toString(){
+	return data;
+    }
 }
