@@ -1,7 +1,7 @@
 public class Book{
     //Field Variables
-    private String author;
     private String title;
+    private String author;
     private String IBSN;
 
 
@@ -12,8 +12,8 @@ public class Book{
 	IBSN = "";
     }
 
-    public Book(String aut, String ti, String ibsn){
-	auther = aut;
+    public Book(String ti, String aut, String ibsn){
+	author = aut;
 	title = ti;
 	IBSN = ibsn;
     }
@@ -49,6 +49,6 @@ public class Book{
 
     //toString
     public String toString(){
-	return "\"" + title + "\" by " + author + "IBSN: " + IBSN;
+	return "\"" + title + "\" by " + author + " IBSN: " + IBSN;
     }
 }
