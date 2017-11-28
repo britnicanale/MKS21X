@@ -13,7 +13,7 @@ public class Book{
     }
 
     public Book(String aut, String ti, String ibsn){
-	auther = aut;
+	author = aut;
 	title = ti;
 	IBSN = ibsn;
     }
@@ -46,4 +46,9 @@ public class Book{
 	IBSN = ibsn;
     }
 
+
+    //toString
+    public String toString(){
+	return "\"" + title + "\" by " + author + "IBSN: " + IBSN;
+    }
 }
