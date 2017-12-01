@@ -36,15 +36,15 @@ public class CirculatingBook extends LibraryBook{
 
     public String circulationStatus(){
 	if(currentHolder.equals("")){
-	    return "Book available on shelves";
+	    return " Book available on shelves";
 	}
-	return "Current Holder: " + currentHolder + " Due Date: " + dueDate;
+	return "\nCurrent Holder: " + currentHolder + "\nDue Date: " + dueDate;
     }
 
     public String toString(){
         if(currentHolder.equals("")){
             return super.toString();
         }
-        return super.toString() + " Current Holder: " + currentHolder + " Due Date: " + dueDate;
+        return super.toString() + circulationStatus();
     }
 }

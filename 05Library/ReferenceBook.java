@@ -27,6 +27,6 @@ public class ReferenceBook extends LibraryBook{
     }
 
     public String toString(){
-	return super.toString() + " Collection: " + collection;
+	return super.toString() + "\nCollection: " + collection;
     }
 }

@@ -25,10 +25,10 @@ abstract class LibraryBook extends Book implements Comparable<LibraryBook>{
     abstract String circulationStatus();
 
     public int compareTo(LibraryBook lb){
-	return Integer.parseInt(callNumber) - Integer.parseInt(lb.getCallNumber());
+	return this.getCallNumber().compareTo(lb.getCallNumber());
     }
 
     public String toString(){
-	return super.toString() + "Call Number: " + callNumber + " Circulation Status: " + circulationStatus();
+	return super.toString() + "\nCall Number: " + callNumber + "\nCirculation Status: " + circulationStatus();
     }
 }
