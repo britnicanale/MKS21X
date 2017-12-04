@@ -1,22 +1,29 @@
-public class SuperArrayIterator implements Iterator<Integer>{
+import java.util.Iterator;
+
+public class SuperArrayIterator implements Iterator<String>{
     private SuperArray data;
-    private int current;
+    private int current, end;
  
-    public SuperArrayIterator(SuperArray supArr, int curr){
+    public SuperArrayIterator(SuperArray supArr){
 	data = supArr;
-	current = curr;
+	current = 0;
+	end = data.size()
     }
 
     public boolean hasNext(){
-	return current <= data.size();
+	return current <= end;
     }
 
-    public Integer next(){
+    public void remove(){
+	throw new UnsupportedOperationException():
+    }
+
+    public String next(){
 	if (hasNext()){
 	    current++;
 	}else{
 	    System.exit(0);
 	}
-	return current - 1;
+	return data.get(current - 1);
     }
 }
