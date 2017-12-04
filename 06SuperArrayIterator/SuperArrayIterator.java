@@ -7,7 +7,7 @@ public class SuperArrayIterator implements Iterator<String>{
     public SuperArrayIterator(SuperArray supArr){
 	data = supArr;
 	current = 0;
-	end = data.size()
+	end = data.size();
     }
 
     public boolean hasNext(){
@@ -15,7 +15,7 @@ public class SuperArrayIterator implements Iterator<String>{
     }
 
     public void remove(){
-	throw new UnsupportedOperationException():
+	throw new UnsupportedOperationException();
     }
 
     public String next(){
