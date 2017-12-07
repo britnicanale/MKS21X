@@ -26,7 +26,7 @@ public class Sorts{
 
     public static void insertionSort(int[] ary){
 	for(int i = 1; i < ary.length; i++){
-	    for(int j = i - 1; j >= 0 && ary[j] < ary [j+1]; j--){
+	    for(int j = i - 1; j >= 0 && ary[j] > ary[j+1]; j--){
 		swap(ary, j, j + 1);
 	    }
 	}
@@ -41,7 +41,8 @@ public class Sorts{
         }
 
         System.out.println(Arrays.toString(randish));
-        selectionSort(randish);
+        //selectionSort(randish);
+	insertionSort(randish);
         System.out.println(Arrays.toString(randish));
     }
 }
