@@ -15,7 +15,7 @@ public class Sorts{
 	    int s = i;
 	    for(int j = i + 1; j < ary.length; j++){
 		if(ary[j] < ary[i]){
-		    s = j;
+		    swap = j;
 		}
 	    }
 	    swap(ary, i, s);
