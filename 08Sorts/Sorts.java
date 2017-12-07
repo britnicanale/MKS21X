@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Sorts{
     public static String name(){
 	return "09.Canale.Britni";
@@ -13,12 +15,33 @@ public class Sorts{
     public static void selectionSort(int[] ary){
 	for(int i = 0; i + 1 < ary.length; i++){
 	    int s = i;
-	    for(int j = i + 1; j < ary.length; j++){
-		if(ary[j] < ary[i]){
+	    for(int j = i + 1; j< ary.length; j++){
+		if(ary[j] < ary[s]){
 		    s = j;
 		}
 	    }
 	    swap(ary, i, s);
 	}
+    }
+
+    public static void insertionSort(int[] ary){
+	for(int i = 1; i < ary.length; i++){
+	    for(int j = i - 1; j >= 0 && ary[j] < ary [j+1]; j--){
+		swap(ary, j, j + 1);
+	    }
+	}
+    }
+
+
+
+    public static void main(String[]ary){
+        int[] randish = new int[25];
+        for(int i = 0 ; i < randish.length; i++){
+            randish[i] =(int)(Math.random()*100);
+        }
+
+        System.out.println(Arrays.toString(randish));
+        selectionSort(randish);
+        System.out.println(Arrays.toString(randish));
     }
 }
