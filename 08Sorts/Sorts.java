@@ -50,10 +50,20 @@ public class Sorts{
         for(int i = 0 ; i < randish.length; i++){
             randish[i] =(int)(Math.random()*100);
         }
+	int[] ranCopy = new int [randish.length];
+	for(int i = 0 ; i < randish.length; i++){
+	    ranCopy[i] = randish[i];
+	}
 
-        System.out.println(Arrays.toString(randish));
-        //selectionSort(randish);
+        System.out.println("Randish: " + Arrays.toString(randish));
+	System.out.println("RanCopy: " + Arrays.toString(ranCopy));
+
+
+	selectionSort(ranCopy);
 	insertionSort(randish);
+	System.out.println(equals(randish, ranCopy));
         System.out.println(Arrays.toString(randish));
+	System.out.println(Arrays.toString(ranCopy));
+
     }
 }
