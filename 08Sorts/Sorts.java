@@ -64,8 +64,13 @@ public class Sorts{
 	}
     }
 
+
+
+
+
+
     public static void main(String[]ary){
-        int[] randish = new int[25];
+        int[] randish = new int[25000];
         for(int i = 0 ; i < randish.length; i++){
             randish[i] =(int)(Math.random()*100);
         }
@@ -75,15 +80,15 @@ public class Sorts{
 	    ranCopy[i] = randish[i];
 	}
 	
-        System.out.println("Randish: " + Arrays.toString(randish));
-	System.out.println("RanCopy: " + Arrays.toString(ranCopy));
+        //System.out.println("Randish: " + Arrays.toString(randish));
+	//System.out.println("RanCopy: " + Arrays.toString(ranCopy));
 
 
 	selectionSort(ranCopy);
 	bubbleSort(randish);
 	System.out.println(equals(randish, ranCopy));
-        System.out.println(Arrays.toString(randish));
-	System.out.println(Arrays.toString(ranCopy));
+        //System.out.println(Arrays.toString(randish));
+	//System.out.println(Arrays.toString(ranCopy));
 
     }
 }
