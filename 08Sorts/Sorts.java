@@ -23,6 +23,15 @@ public class Sorts{
         ary[b] = c;                           
     }
 
+    public static boolean isSorted(int[]ary){                                       
+        for(int i = 0; i < ary.length - 1 ; i++){                                   
+            if(ary[i] > ary[i+1]){                                                  
+                return false;                                                       
+            }                                                                       
+        }                                                                           
+        return true;                                                                
+    }              
+
     public static void selectionSort(int[] ary){
 	for(int i = 0; i + 1 < ary.length; i++){
 	    int s = i;
@@ -43,27 +52,36 @@ public class Sorts{
 	}
     }
 
-
+    public static void bubbleSort(int[] ary){
+	while(!isSorted(ary)){
+	    for(int i = 0; i < ary.length - 1; i++){
+		if(ary[i] > ary[i+1]){
+		    swap(ary, i, i+1);
+		}
+	    }
+	}
+    }
 
     public static void main(String[]ary){
-        int[] randish = new int[250];
+        int[] randish = new int[25];
         for(int i = 0 ; i < randish.length; i++){
             randish[i] =(int)(Math.random()*100);
         }
+	/*
 	int[] ranCopy = new int [randish.length];
 	for(int i = 0 ; i < randish.length; i++){
 	    ranCopy[i] = randish[i];
 	}
-
+	*/
         System.out.println("Randish: " + Arrays.toString(randish));
-	System.out.println("RanCopy: " + Arrays.toString(ranCopy));
+	//	System.out.println("RanCopy: " + Arrays.toString(ranCopy));
 
 
-	selectionSort(ranCopy);
-	insertionSort(randish);
-	System.out.println(equals(randish, ranCopy));
+	//selectionSort(ranCopy);
+	bubbleSort(randish);
+	//System.out.println(equals(randish, ranCopy));
         System.out.println(Arrays.toString(randish));
-	System.out.println(Arrays.toString(ranCopy));
+	//System.out.println(Arrays.toString(ranCopy));
 
     }
 }
