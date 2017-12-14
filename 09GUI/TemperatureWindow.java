@@ -14,7 +14,7 @@ public class TemperatureWindow extends JFrame implements ActionListener{
 	    t.setText("" +( ((Double.parseDouble(t.getText()) - 32)* 5)/9));
 	    }
 	    catch(NumberFormatException f){
-		t.setText("Illegal imput: Enter a number");
+		t.setText("Please Enter a Number");
 	    }
 	}
 	if(s.equals("Convert C to F")){
@@ -22,7 +22,7 @@ public class TemperatureWindow extends JFrame implements ActionListener{
 		t.setText(""+ (Double.parseDouble(t.getText())*9 / 5 + 32));
 	    }
 	    catch(NumberFormatException f){
-		t.setText("Illegal imput: Enter a number");
+		t.setText("Please Enter a Number");
 	    }
 	}
     }
@@ -31,7 +31,7 @@ public class TemperatureWindow extends JFrame implements ActionListener{
 
     public TemperatureWindow(){
         this.setTitle("Temperature Window");
-        this.setSize(600,200);
+        this.setSize(400,100);
         this.setLocation(100,100);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
@@ -41,7 +41,7 @@ public class TemperatureWindow extends JFrame implements ActionListener{
         FtoC = new JButton("Convert F to C");
         CtoF = new JButton("Convert C to F");
 
-        t = new JTextField(12);
+        t = new JTextField(24);
 
 	FtoC.addActionListener(this);
 	CtoF.addActionListener(this);
