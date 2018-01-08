@@ -56,7 +56,8 @@ public class Barcode implements Comparable<Barcode>{
     private static int getCheck(String zip){
 	int total = 0;
 	if(zip.length() != 5){
-            throw new IllegalArgumentException();
+            System.out.println(zip.length());
+	    throw new IllegalArgumentException();
         }
 	for(int i = 0; i < 5; i++){
 	    try{
@@ -73,10 +74,10 @@ public class Barcode implements Comparable<Barcode>{
     public static String toZip(String code){
 	String zip = "";
         String[] convert = new String[] {"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
-	if((code.charAt(0) != '|' || code.charAt(31) != '|') || code.length() != 32){
+	if((code.charAt(0) != '|'|| code.length() != 32) || code.charAt(31) != '|'){
 	    throw new IllegalArgumentException();
 	}
-	for(int i = 1; i < 31; i += 5){
+	for(int i = 1; i < 26; i += 5){
 	    for(int j = 0; j < 10; j++){
 		if(code.substring(i, i+5).equals(convert[j])){
 		    zip+=j;
@@ -86,7 +87,7 @@ public class Barcode implements Comparable<Barcode>{
 	if(zip.length() < 5){
 	    throw new IllegalArgumentException();
 	}
-	if(!code.substring(26,30).equals(convert[getCheck(zip)])){
+	if(!code.substring(26,31).equals(convert[getCheck(zip)])){
 	    throw new IllegalArgumentException();
 	}
 	return zip;
@@ -104,4 +105,5 @@ public class Barcode implements Comparable<Barcode>{
     public String getZip(){
 	return zip;
     }
+    
 }
