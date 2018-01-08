@@ -13,10 +13,22 @@ public class ReversedCharSequence implements CharSequence{
 	return data.length();
     }
     public ReversedCharSequence subSequence(int start, int end){
-	ReversedCharSequence ret = new ReversedCharSequence(data.substring(start, end));
+	String sub = data.substring(start, end);
+	String reverse = "";
+	for(int i = sub.length() - 1; i >= 0; i--){
+            reverse  += sub.charAt(i);
+        }
+	ReversedCharSequence ret = new ReversedCharSequence(reverse);
 	return ret;
     }  
     public String toString(){
 	return data;
+    }
+    public static void main(String[] args){
+	ReversedCharSequence backwards = new ReversedCharSequence("backwards");
+	System.out.println(backwards.charAt(0));
+	System.out.println(backwards.length());
+	System.out.println(backwards.subSequence(0, 4));
+	System.out.println(backwards);
     }
 }
